@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <meta name="description" content="Simple E-Commerce Website">
+  <meta name="author" content="Shahd abu sharif" >
+
+  <title>Simple E-Commerce</title>
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><i class="fas fa-store"></i> My Shop</h1>
+
+    <!-- Search bar -->
+    <input type="text" id="search-bar" placeholder="Search products..." />
+
+    <!-- Cart icon with item count and total price -->
+    <div id="cart" class="cart-icon">
+      <i class="fas fa-shopping-cart"></i>
+      <span id="cart-count">0</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+  </header>
+
+  <!-- Product display area -->
+  <main id="product-list"></main>
+
+  <!-- Cart modal (appears when cart icon is clicked) -->
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-shopping-cart"></i> Your Cart</h2>
+        <button class="close-btn" onclick="closeCart()">&times;</button>
+      </div>
+
+      <!-- Container for cart items -->
+      <div id="cart-items-container">
+        <ul id="cart-items"></ul>
+
+        <!-- Cart summary: total, checkout, clear -->
+        <div class="cart-summary">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="modal-cart-total">$0.00</span>
+          </div>
+          <button class="checkout-btn" onclick="checkout()">Checkout</button>
+          <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+        </div>
+      </div>
+
+      <!-- Message when cart is empty -->
+      <div id="empty-cart-message">Your cart is empty</div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
